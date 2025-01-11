@@ -2,6 +2,8 @@ package com.pair5.crm.entity;
 
 import jakarta.persistence.*;
 
+@Entity
+@Table(name = "individual_customers")
 public class IndividualCustomers
 {
     @Id
