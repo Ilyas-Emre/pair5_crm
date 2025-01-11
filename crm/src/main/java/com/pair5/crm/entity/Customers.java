@@ -21,6 +21,6 @@ public class Customers
     private int segmentationId;
 
     @OneToOne (mappedBy = "customer")
-    private IndividualCustomers individualCustomers;
+    private IndividualCustomers individualCustomer;
 
 }
