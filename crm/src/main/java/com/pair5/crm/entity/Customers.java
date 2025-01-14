@@ -1,6 +1,9 @@
 package com.pair5.crm.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "customers")
@@ -17,10 +20,19 @@ public class Customers
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "segmentation_id")
-    private int segmentationId;
-
     @OneToOne (mappedBy = "customer")
     private IndividualCustomers individualCustomer;
+
+    @ManyToOne
+    @JoinColumn(name = "segmentation_id")
+    private SegmentationTypes segmentationType;
+
+    @OneToMany(mappedBy = "customer")
+    @JsonIgnore
+    private List<Requests> requests;
+
+    @OneToMany(mappedBy = "customer")
+    @JsonIgnore
+    private List<Feedbacks> feedbacks;
 
 }
