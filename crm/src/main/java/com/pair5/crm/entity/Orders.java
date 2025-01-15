@@ -1,9 +1,11 @@
 package com.pair5.crm.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "orders")
@@ -26,5 +28,9 @@ public class Orders {
 
     @OneToOne(mappedBy = "order")
     private OrderInvoices orderInvoice;
+
+    @OneToMany(mappedBy = "orderId")
+    @JsonIgnore
+    private List<OrderProducts> orderProducts;
 
 }

@@ -1,8 +1,10 @@
 package com.pair5.crm.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -25,4 +27,8 @@ public class Products {
     @ManyToOne
     @JoinColumn(name = "type_id")
     private ProductServiceTypes productServiceType;
+
+    @OneToMany(mappedBy = "productId")
+    @JsonIgnore
+    private List<OrderProducts> orderProducts;
 }
