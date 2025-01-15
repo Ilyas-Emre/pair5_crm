@@ -36,4 +36,8 @@ public class Invoices {
     @OneToMany(mappedBy = "invoice")
     @JsonIgnore
     private List<OrderInvoices> orderInvoices;
+
+    @OneToMany(mappedBy = "subscription")
+    @JsonIgnore
+    private List<SubscriptionInvoices> subscriptionInvoices;
 }

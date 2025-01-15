@@ -30,4 +30,7 @@ public class Subscriptions {
     @JoinColumn(name = "subscription_package_id")
     private SubscriptionPackages subscriptionPackage;
 
+    @OneToOne(mappedBy = "subcription")
+    private SubscriptionInvoices subscriptionInvoice;
+
 }
