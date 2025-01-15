@@ -1,9 +1,14 @@
 package com.pair5.crm.entity;
 
 import jakarta.persistence.*;
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @IdClass(OrderProductsId.class)
 @Table(name = "order_products")
