@@ -1,6 +1,9 @@
 package com.pair5.crm.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "notification_types")
@@ -13,4 +16,8 @@ public class NotificationTypes {
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "notificationType")
+    @JsonIgnore
+    private List<CustomerNotifications> customerNotifications;
 }
