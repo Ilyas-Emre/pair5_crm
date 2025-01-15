@@ -39,4 +39,8 @@ public class Customers
     @JsonIgnore
     private List<Subscriptions> subscriptions;
 
+    @OneToMany(mappedBy = "customer")
+    @JsonIgnore
+    private List<Orders> orders;
+
 }
