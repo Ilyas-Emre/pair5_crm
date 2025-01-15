@@ -31,4 +31,8 @@ public class Products {
     @OneToMany(mappedBy = "productId")
     @JsonIgnore
     private List<OrderProducts> orderProducts;
+
+    @OneToMany(mappedBy = "product")
+    @JsonIgnore
+    private List<ProductCampaigns> productCampaigns;
 }

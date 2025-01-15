@@ -32,4 +32,8 @@ public class Campaigns {
     @JsonIgnore
     private List<SubscriptionPackagesCampaigns> subscriptionPackagesCampaigns;
 
+    @OneToMany(mappedBy = "campaign")
+    @JsonIgnore
+    private List<ProductCampaigns> productCampaigns;
+
 }
