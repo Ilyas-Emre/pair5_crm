@@ -27,4 +27,9 @@ public class SubscriptionPackages {
     @OneToMany(mappedBy = "subscriptionPackage")
     @JsonIgnore
     private List<Subscriptions> subscriptions;
+
+    @OneToMany(mappedBy = "subscriptionPackage")
+    @JsonIgnore
+    private List<SubscriptionPackagesCampaigns> subscriptionPackagesCampaigns;
+
 }

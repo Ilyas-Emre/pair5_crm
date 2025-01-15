@@ -1,8 +1,10 @@
 package com.pair5.crm.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "campaigns")
@@ -25,4 +27,9 @@ public class Campaigns {
     @ManyToOne
     @JoinColumn(name = "segmentation_id")
     private SegmentationTypes segmentationType;
+
+    @OneToMany(mappedBy = "campaign")
+    @JsonIgnore
+    private List<SubscriptionPackagesCampaigns> subscriptionPackagesCampaigns;
+
 }
