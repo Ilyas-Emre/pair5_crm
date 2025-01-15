@@ -1,9 +1,11 @@
 package com.pair5.crm.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "invoices")
@@ -30,4 +32,8 @@ public class Invoices {
     @ManyToOne
     @JoinColumn(name = "invoice_types")
     private InvoiceTypes invoiceType;
+
+    @OneToMany(mappedBy = "invoice")
+    @JsonIgnore
+    private List<OrderInvoices> orderInvoices;
 }

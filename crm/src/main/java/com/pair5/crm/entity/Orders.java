@@ -24,4 +24,7 @@ public class Orders {
     @JoinColumn(name = "customer_id")
     private Customers customer;
 
+    @OneToOne(mappedBy = "order")
+    private OrderInvoices orderInvoice;
+
 }
