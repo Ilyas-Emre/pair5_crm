@@ -17,7 +17,7 @@ public class FeedbackTypes {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "requestType")
+    @OneToMany(mappedBy = "feedbackType")
     @JsonIgnore
     private List<Feedbacks> feedbacks;
 }

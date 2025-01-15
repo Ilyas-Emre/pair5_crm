@@ -30,7 +30,7 @@ public class Invoices {
     private PaymentTypes paymentType;
 
     @ManyToOne
-    @JoinColumn(name = "invoice_types")
+    @JoinColumn(name = "invoice_type_id")
     private InvoiceTypes invoiceType;
 
     @OneToMany(mappedBy = "invoice")
